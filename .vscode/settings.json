@@ -1,0 +1,11 @@
+{
+  "workbench.colorCustomizations": {
+    "minimap.selectionHighlight": "#ff0000",
+    "minimapSlider.background": "#9013ce93",
+    "minimapSlider.hoverBackground": "#692b884d",
+    "editor.selectionHighlightBorder": "#ffffff35",
+    "activityBar.background": "#18d140",
+    "titleBar.activeBackground": "#034B12",
+    "titleBar.activeForeground": "#ECFEF0"
+  }
+}

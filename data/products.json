@@ -1,0 +1,50 @@
+[
+  {
+    "id": 1,
+    "product_name": "Leche"
+  },
+  {
+    "id": 2,
+    "product_name": "Pan Tajado"
+  },
+  {
+    "id": 3,
+    "product_name": "Huevos"
+  },
+  {
+    "id": 4,  
+    "product_name": "Pulpa de Fruta congelada"
+  },
+  {
+    "id": 5,  
+    "product_name": "Queso mozarella"
+  },
+  {
+    "id": 6,  
+    "product_name": "Mezcla lista para pancakes"
+  },
+  {
+    "id": 7,  
+    "product_name": "Arena para gatos"
+  },
+  {
+    "id": 8,  
+    "product_name": "Analgesicos"
+  },
+  {
+    "id": 9,  
+    "product_name": "Mermelada"
+  },
+  {
+    "id": 10,  
+    "product_name": "Toalla de papel"
+  },
+  {
+    "id": 11,  
+    "product_name": "Cornflakes"
+  },
+  {
+    "id": 12,  
+    "product_name": "Jabon de Ropa"
+  }
+]
