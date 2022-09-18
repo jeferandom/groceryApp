@@ -1,18 +1,22 @@
 import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import { Button, StyleSheet, Text, View } from 'react-native';
 import BoxItem from './components/GenericComponents/BoxItem';
 import List from './components/GenericComponents/List';
 import products from "./data/products.json"
+import { store } from "./src/state/store"
+import { Provider } from 'react-redux';
+import ShoppingLists from './components/CoreComponents/shoppingLists/ShoppingLists';
+
+
 export default function App() {
+
   return (
-    <View style={styles.container}>
-      <StatusBar style="auto" />
-      <List
-        itemComponent={BoxItem}
-        data={products.map(product => {
-          return { ...product, text: product.product_name }
-        })} />
-    </View>
+    <Provider store={store}>
+      <View style={styles.container}>
+        <StatusBar style="auto" />
+        <ShoppingLists />
+      </View>
+    </Provider>
   );
 }
 
