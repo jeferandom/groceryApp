@@ -1,4 +1,4 @@
-import shoppingLists from "../../data/api"
+import shoppingLists from "../data/api"
 
 import { shoppingListsSuccess } from "../redux/shoppingListsSlice"
 
