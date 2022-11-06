@@ -1,16 +1,16 @@
 import { createSlice } from "@reduxjs/toolkit"
 import type { PayloadAction } from '@reduxjs/toolkit'
-import { RootState } from "../state/store"
-
-// Define a type for the slice state
-export interface ShoppingList {
-  name: string
-  id: string
-}
+import { ShoppingListsModel } from '../models/ShoppingList';
 
 // Define the initial state using that type
-const initialState = {
+const initialState: ShoppingListsModel = {
   shoppingLists: [],
+  defaultShoppingList: {
+    id: "",
+    title: "",
+    detail: "",
+    products: []
+  },
   isLoading: true
 }
 export const shoppingListsSlice = createSlice({
@@ -23,11 +23,11 @@ export const shoppingListsSlice = createSlice({
       state.isLoading = false;
     },
     // Use the PayloadAction type to declare the contents of `action.payload`
-    addNewShoppingList: (state, action: PayloadAction<ShoppingList>) => {
+    addNewShoppingList: (state, action: PayloadAction<ShoppingListsModel>) => {
       console.log('action', action)
       state.shoppingLists = [...state.shoppingLists, action.payload]
     },
-    deleteShoppingList: (state, action: PayloadAction<ShoppingList>) => {
+    deleteShoppingList: (state, action: PayloadAction<ShoppingListsModel>) => {
       state.shoppingLists = [...state.shoppingLists.filter(shoppingList => shoppingList.id != action.payload)]
     }
   }

@@ -1,11 +1,13 @@
 import { useEffect, useState } from "react";
 import { Button, View, Text, TextInput } from "react-native"
-import { useAppDispatch, useAppSelector } from "../../../redux/hooks";
-import { addNewShoppingList } from "../../../redux/shoppingListsSlice";
-import { RootState } from "../../../state/store";
 import BoxItem from "../../GenericComponents/BoxItem";
 import List from "../../GenericComponents/List";
-import AddShoppingList from "./AddShoppingList";
+import AddShoppingListButton from "./AddShoppingListButton";
+import Title from "../../GenericComponents/Title";
+
+import { RootState } from "../../../state/store";
+import { useAppSelector } from "../../../redux/hooks";
+
 
 const ShoppingLists = () => {
 
@@ -15,12 +17,13 @@ const ShoppingLists = () => {
 
   return (
     <View>
+      <Title text="Shopping Lists"/>
       <List
         itemComponent={BoxItem}
         data={shoppingLists.map((shoppingList, i) => {
           return { ...shoppingList, text: shoppingList.name, id: shoppingList.id }
         })} />
-      <AddShoppingList />
+      <AddShoppingListButton />
     </View>
   )
 }
