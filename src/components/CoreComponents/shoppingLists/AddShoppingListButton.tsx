@@ -17,7 +17,6 @@ const AddShoppingListButton = () => {
       detail: newShoppingListDetail,
       products: []
     }
-    dispatch(addNewShoppingList(newShoppingList))
     try {
       await addDoc(collection(db, 'shoppingLists'), {
         tempId: newShoppingList.id,
@@ -26,7 +25,7 @@ const AddShoppingListButton = () => {
         products: newShoppingList.products,
         created: Timestamp.now()
       })
-
+      dispatch(addNewShoppingList(newShoppingList))      
     } catch (error) {
       console.log('error', error)
     }

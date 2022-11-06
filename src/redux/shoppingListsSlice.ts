@@ -1,6 +1,6 @@
 import { createSlice } from "@reduxjs/toolkit"
 import type { PayloadAction } from '@reduxjs/toolkit'
-import { ShoppingListsModel } from '../models/ShoppingList';
+import { ShoppingListsModel,ShoppingListModel } from './ReduxTypes';
 
 // Define the initial state using that type
 const initialState: ShoppingListsModel = {
@@ -23,7 +23,7 @@ export const shoppingListsSlice = createSlice({
       state.isLoading = false;
     },
     // Use the PayloadAction type to declare the contents of `action.payload`
-    addNewShoppingList: (state, action: PayloadAction<ShoppingListsModel>) => {
+    addNewShoppingList: (state, action: PayloadAction<ShoppingListModel>) => {
       console.log('action', action)
       state.shoppingLists = [...state.shoppingLists, action.payload]
     },
