@@ -1,13 +1,12 @@
-import { Text } from 'react-native';
+import { Dimensions, StyleSheet, Text, View } from 'react-native';
 import styled from 'styled-components/native';
 import colors from "../../../constants/colors";
-
 
 const ShoppingListItem = ({ item }) => {
   const { title = `[list title here]`, } = item;
   return (
-    <ShoppingListItemBox color={colors.primary} height={80} width={300}>
-      <Text>{title}</Text>
+    <ShoppingListItemBox color={colors.primary} height={100} width={300}>
+      <Text>{title}</Text>      
     </ShoppingListItemBox>
   )
 }
