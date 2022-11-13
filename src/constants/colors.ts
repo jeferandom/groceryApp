@@ -1,3 +1,4 @@
-export default {
-  "primary":"#42f5b9"
+const colors = {
+  primary: "#42f5b9"
 }
+export default colors

@@ -1,30 +1,47 @@
-import { useEffect, useState } from "react";
-import { Button, View, Text, TextInput } from "react-native"
-import BoxItem from "../../GenericComponents/BoxItem";
-import List from "../../GenericComponents/List";
-import AddShoppingListButton from "./AddShoppingListButton";
-import Title from "../../GenericComponents/Title";
+import { FlatList } from "react-native"
 
+import ShoppingListItem from "./ShoppingListItem";
 import { RootState } from "../../../state/store";
 import { useAppSelector } from "../../../redux/hooks";
 
-
 const ShoppingLists = () => {
-
   const { shoppingLists } = useAppSelector((state: RootState) => state.shoppingLists)
-
   console.log('shoppingLists', shoppingLists)
-
   return (
-    <View>
-      <Title text="Shopping Lists"/>
-      <List
-        itemComponent={BoxItem}
-        data={shoppingLists.map((shoppingList, i) => {
-          return { ...shoppingList, text: shoppingList.name, id: shoppingList.id }
-        })} />
-      <AddShoppingListButton />
-    </View>
+    <FlatList
+      data={[
+        {
+          id: "Test",
+          title: "Desayunos",
+          detail: "Test",
+          products: []
+        },
+        {
+          id: "Test",
+          title: "Comestibles",
+          detail: "Test",
+          products: []
+        },
+        {
+          id: "Test",
+          title: "Casa",
+          detail: "Test",
+          products: []
+        },
+        {
+          id: "Test",
+          title: "Insumos Aseo",
+          detail: "Test",
+          products: []
+        },
+      ]}
+      renderItem={({ item }) => (
+        <ShoppingListItem
+          key={item.id} item = {item}
+        />
+      )}
+      keyExtractor={item => item.id}
+    />
   )
 }
 
