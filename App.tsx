@@ -17,7 +17,10 @@ export default function App() {
       <View style={styles.container}>
         <Wavy />
         <StatusBar style="auto" />
-        <ShoppingLists />
+        <ShoppingLists height={200} fontStyle={{
+          fontSize: 20,
+          color: "#38b9e8",
+        }} bgColor={"#1e062a"} />
         <AddShoppingListButton />
       </View>
     </Provider>

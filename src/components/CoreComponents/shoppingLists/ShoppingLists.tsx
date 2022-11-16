@@ -3,12 +3,13 @@ import { Dimensions, FlatList, StyleSheet, View } from "react-native"
 import ShoppingListItem from "./ShoppingListItem";
 import { RootState } from "../../../state/store";
 import { useAppSelector } from "../../../redux/hooks";
+import colors from "../../../constants/colors";
 
-const ShoppingLists = () => {
+const ShoppingLists = (props) => {
   const { shoppingLists } = useAppSelector((state: RootState) => state.shoppingLists)
-  console.log('shoppingLists', shoppingLists)
+  const { bgColor = "#43da0c", fontStyle, height = Dimensions.get('window').height - 200 } = props
   return (
-    <View style={{height: Dimensions.get('window').height-200}}>
+    <View style={{ height }}>
       <FlatList
         data={[
           {
@@ -62,7 +63,10 @@ const ShoppingLists = () => {
         ]}
         renderItem={({ item }) => (
           <ShoppingListItem
-            key={item.id} item={item}
+            bgColor={bgColor}
+            fontStyle={fontStyle}
+            key={item.id}
+            item={item}
           />
         )}
         keyExtractor={item => item.id}
